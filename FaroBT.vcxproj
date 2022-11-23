@@ -88,13 +88,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FGUIBuild.cpp" />
+    <ClCompile Include="DefaultTableModel.cpp" />
+    <ClCompile Include="easylogging++.cc" />
+    <ClCompile Include="GUIBuild.cpp" />
     <ClCompile Include="SideBar.cpp" />
     <QtRcc Include="MainResourceFile.qrc" />
     <QtUic Include="FaroBT.ui" />
     <QtMoc Include="FaroBT.h" />
     <ClCompile Include="FaroBT.cpp" />
-    <ClCompile Include="FUserSite.cpp" />
+    <ClCompile Include="SqlConnection.cpp" />
+    <ClCompile Include="UserSite.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="UsersSiteBody.ui" />
   </ItemGroup>
@@ -102,9 +105,15 @@
     <Text Include="Farbcodes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FGUIBuild.h" />
-    <ClInclude Include="FUserSite.h" />
+    <ClInclude Include="DefaultTableModel.h" />
+    <ClInclude Include="easylogging++.h" />
+    <ClInclude Include="GUIBuild.h" />
+    <ClInclude Include="SqlConnection.h" />
+    <ClInclude Include="UserSite.h" />
     <ClInclude Include="SideBar.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logging_config.cfg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

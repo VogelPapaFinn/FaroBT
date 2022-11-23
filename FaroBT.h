@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FGUIBuild.h"
-#include "FUserSite.h"
+#include "GUIBuild.h"
+#include "UserSite.h"
 
 #include <QtWidgets/QMainWindow>
 #include "ui_FaroBT.h"

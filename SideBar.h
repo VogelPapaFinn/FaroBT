@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FGUIBuild.h"
+#include "GUIBuild.h"
 
 #include <qapplication.h>
 #include <qframe.h>

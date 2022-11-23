@@ -5,9 +5,9 @@
 // Definde Event Number
 const QEvent::Type GUIBuildEvent = static_cast<QEvent::Type>(QEvent::User + 1);
 
-class FGUIBuild : public QEvent
+class GUIBuild : public QEvent
 {
 public:
-	FGUIBuild();
+	GUIBuild();
 };
 

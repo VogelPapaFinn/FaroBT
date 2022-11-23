@@ -5,14 +5,12 @@ FaroBT::FaroBT(QWidget *parent) :
 {
     ui_.setupUi(this);
 
-
-
     // Send GUIBuild-Event to sidebar
     // Needs to be done so the sidebar can be collapsed and expanded
-    QCoreApplication::postEvent(ui_.sidebar, new FGUIBuild());
+    QCoreApplication::postEvent(ui_.sidebar, new GUIBuild());
 
-    FUserSite* tmp = findChild<FUserSite*>("user_site");
-    tmp->addEntry();
+    // TESTING
+    UserSite* site = findChild<UserSite*>("user_site");
 }
 
 FaroBT::~FaroBT()

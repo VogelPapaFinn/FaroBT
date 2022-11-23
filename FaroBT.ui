@@ -387,7 +387,7 @@ QPushButton:pressed
         </property>
        </widget>
       </widget>
-      <widget class="FUserSite" name="user_site">
+      <widget class="UserSite" name="user_site">
        <property name="styleSheet">
         <string notr="true">#user_site
 {
@@ -403,9 +403,9 @@ QPushButton:pressed
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>FUserSite</class>
+   <class>UserSite</class>
    <extends>QWidget</extends>
-   <header>FUserSite.h</header>
+   <header>UserSite.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
