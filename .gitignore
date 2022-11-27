@@ -1,7 +1,7 @@
 /.git
 /.vs
+/bin
 /x64
 
 /FaroBT.vcxproj.filters
 /FaroBT.vcxproj.user
-/test_ui.ui
