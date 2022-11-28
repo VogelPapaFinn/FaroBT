@@ -1,0 +1,7 @@
+Hauptblau: #1B263B
+Button pressed/gedrückt Blau, Sidebar: #1F335D
+Button wie bspw. add User: #191970
+Grau, Hintergrund: #D9D9D9
+Rand: #000000
+Rand Grau: #999997
+Blauer Hover Effekt: #add8e6

@@ -1,0 +1,7 @@
+.git/
+.vs/
+build/
+x64/
+
+/FaroBT.vcxproj.filters
+/FaroBT.vcxproj.user
