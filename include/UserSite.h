@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DefaultTableModel.h"
+#include "TableView.h"
 #include "GUIBuild.h"
 #include "SqlConnection.h"
 
@@ -34,4 +35,3 @@ private:
 	QHeaderView* tv_header_;
 	QTableView* table_view_;
 };
-

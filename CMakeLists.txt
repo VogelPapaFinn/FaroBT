@@ -36,14 +36,28 @@ file(GLOB_RECURSE SOURCES
 		"*.qrc"
         "${DEP_DIR}/*"
         "${FORMS_DIR}/*.ui"
-        "${INCLUDE_DIR}/*.h"
-        "${SRC_DIR}/*.cpp"
     )
 
 # Setup Executable
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${FORMS_DIR})
 
-add_executable(FaroBT WIN32 ${SOURCES})
+add_executable(FaroBT WIN32
+        "${SOURCES}"
+        "${INCLUDE_DIR}/DefaultTableModel.h"
+        "${INCLUDE_DIR}/FaroBT.h"
+        "${INCLUDE_DIR}/GUIBuild.h"
+        "${INCLUDE_DIR}/SideBar.h"
+        "${INCLUDE_DIR}/SqlConnection.h"
+        "include/TableView.h"
+        "${INCLUDE_DIR}/UserSite.h"
+        "${SRC_DIR}/DefaultTableModel.cpp"
+        "${SRC_DIR}/FaroBT.cpp"
+        "${SRC_DIR}/GUIBuild.cpp"
+        "${SRC_DIR}/main.cpp"
+        "${SRC_DIR}/SideBar.cpp"
+        "${SRC_DIR}/SqlConnection.cpp"
+        "src/TableView.cpp"
+        "${SRC_DIR}/UserSite.cpp")
 
 target_include_directories(FaroBT PRIVATE ${DEP_DIR})
 target_include_directories(FaroBT PRIVATE ${FORMS_DIR})

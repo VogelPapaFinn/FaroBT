@@ -1,4 +1,4 @@
-#include "../include/UserSite.h"
+#include "UserSite.h"
 
 UserSite::UserSite(QWidget* parent) :
     QWidget(parent),
@@ -55,7 +55,7 @@ UserSite::UserSite(QWidget* parent) :
     font.setBold(true);
 
     // Create Table View
-    table_view_ = findChild<QTableView*>("table_view");
+    table_view_ = findChild<TableView*>("table_view");
     table_view_->setModel(sql_model_);
     if (!db_->isOpen()) table_view_->setModel(new fbt::DefaultTableModel());
     table_view_->verticalHeader()->hide();
