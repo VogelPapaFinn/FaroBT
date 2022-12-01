@@ -1,22 +1,24 @@
+#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_INFO
+
 #include "FaroBT.h"
-#include "dep/log/easylogging++.h"
+
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
 
 #include <QtWidgets/QApplication>
 
-INITIALIZE_EASYLOGGINGPP
-
 int main(int argc, char *argv[])
 {
+    // Initialize Main Logger
+    auto logger = spdlog::basic_logger_mt("main", "logs/main.log");                     // Create logger "main"; writes in file latest.log
+    spdlog::flush_on(spdlog::level::info);                                              // Instantly save all lines
+    spdlog::get("main")->set_pattern("%l [%H:%M:%S-%e %p] {%n - %s:%#} >>> %v");        // Custom layout
+    SPDLOG_LOG_INFO("main", "Starting logger 'main' and opening file 'latest.log'");
+
     QApplication a(argc, argv);
     FaroBT w;
     w.showMaximized();
     w.show();
-
-    el::Configurations defaultConf;
-    defaultConf.setToDefault();
-    defaultConf.set(el::Level::Info, el::ConfigurationType::Format, "%datetime %level %msg");
-    defaultConf.setGlobally(el::ConfigurationType::Format, "%date %msg");
-    el::Loggers::reconfigureLogger("default", defaultConf);
 
     return a.exec();
 }

@@ -15,6 +15,9 @@ void SideBar::customEvent(QEvent* event)
 
 		// Connect
 		connect(toggle_menu_, &QPushButton::clicked, this, &SideBar::toggleSideBar);
+
+		// Log
+		SPDLOG_LOG_INFO("main", "Received event: GUIBuildEvent");
 	}
 }
 

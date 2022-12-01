@@ -42,7 +42,7 @@ UserSite::UserSite(QWidget* parent) :
     // Create Table Model
     sql_model_ = new QSqlTableModel();
     sql_model_->setTable("account");
-    sql_model_->setEditStrategy(QSqlTableModel::OnFieldChange);     // Edits the database when a cell is edited by the user
+    sql_model_->setEditStrategy(QSqlTableModel::OnManualSubmit);     // Edits the database when a cell is edited by the user
     sql_model_->select();
     sql_model_->removeColumn(0);    // Removes account_id
     sql_model_->removeColumn(3);    // Removes password
@@ -65,7 +65,12 @@ UserSite::UserSite(QWidget* parent) :
     tv_header_ = table_view_->horizontalHeader();
     tv_header_->setSectionResizeMode(QHeaderView::Interactive);     // Let the user resize the columns
     tv_header_->setDefaultAlignment(Qt::AlignVCenter);              // Aligns the header text to the left
-    tv_header_->setStyleSheet("QHeaderView::section{background-color: #D9D9D9; border: none; border-top: 1px solid #999997; border-bottom: 1px solid #999997; border-right: 1px dashed #999997; padding-left: 3px;}");
+    tv_header_->setStyleSheet("QHeaderView::section{background-color: #D9D9D9; \
+                                                    border: none; \
+                                                    border-top: 1px solid #999997; \
+                                                    border-bottom: 1px solid #999997; \
+                                                    border-right: 1px dashed #999997; \
+                                                    padding-left: 3px;}");
     tv_header_->setFont(font);
 }
 

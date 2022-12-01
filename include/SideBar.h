@@ -2,6 +2,8 @@
 
 #include "GUIBuild.h"
 
+#include <spdlog/spdlog.h>
+
 #include <QtWidgets/qapplication.h>
 #include <QtWidgets/qframe.h>
 #include <QtWidgets/qpushbutton.h>

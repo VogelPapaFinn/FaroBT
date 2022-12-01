@@ -1,8 +1,7 @@
 #pragma once
-
-#include "dep/log/easylogging++.h"
-
 #include <vector>
+
+#include <spdlog/spdlog.h>
 
 #include <QtSql/qsqldatabase.h>
 

@@ -15,8 +15,9 @@ namespace fbt
 		instance_.setDatabaseName("bugtracker");
 		instance_.setUserName("postgres");
 		instance_.setPassword("postgres");
-		if(instance_.open()) LOG(INFO) << "Established connection to sql database.";
-		else LOG(ERROR) << "Could'nt establish connection to sql database.";
+		
+		if (instance_.open()) SPDLOG_LOG_INFO("main", "Established database connection");
+		else SPDLOG_LOG_WARN("main", "Failed to establish database connection");
 		return &instance_;
 	}
 
