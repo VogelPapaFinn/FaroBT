@@ -1,7 +1,9 @@
 .git/
 .idea/
+.qt/
 .vs/
 build/
+cmake-build-debug/
 x64/
 
 /FaroBT.vcxproj.filters
