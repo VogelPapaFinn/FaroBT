@@ -15,7 +15,7 @@ class SideBar : public QFrame
 public:
 	SideBar(QWidget* parent = nullptr);
 
-	void customEvent(QEvent* event);
+	void customEvent(QEvent* event) override;
 
 public slots:
 	void toggleSideBar();

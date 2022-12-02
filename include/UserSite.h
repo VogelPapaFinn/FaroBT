@@ -22,10 +22,10 @@ class UserSite : public QWidget
 public:
 	UserSite(QWidget* parent = nullptr);
 
-	void resizeEvent(QResizeEvent* event);
+	void customEvent(QEvent* event) override;
+	void resizeEvent(QResizeEvent* event) override;
 
 private:
-	QWidget *widget_;
 	QVBoxLayout *layout_;
 	QSpacerItem* spacer_;
 	QGraphicsDropShadowEffect* drop_shadow_effect_;
