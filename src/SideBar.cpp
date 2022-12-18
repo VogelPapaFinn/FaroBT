@@ -1,4 +1,4 @@
-#include "../include/SideBar.h"
+#include "include/SideBar.h"
 
 SideBar::SideBar(QWidget* parent) :
 	QFrame(parent),

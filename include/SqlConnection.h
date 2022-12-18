@@ -3,6 +3,7 @@
 
 #include <spdlog/spdlog.h>
 
+#include <QtCore/QStringList>
 #include <QtSql/qsqldatabase.h>
 
 namespace fbt
@@ -10,8 +11,7 @@ namespace fbt
 	class SqlConnection
 	{
 	public:
-		static QSqlDatabase* getInstance();
-		static void destroyInstance();
+		static std::shared_ptr<QSqlDatabase> getInstance();
 
 	private:
 		static QSqlDatabase instance_;

@@ -5,3 +5,4 @@ Grau, Hintergrund: #D9D9D9
 Rand: #000000
 Rand Grau: #999997
 Blauer Hover Effekt: #add8e6
+Error Rot: #760000

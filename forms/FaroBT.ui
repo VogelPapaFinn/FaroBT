@@ -383,52 +383,50 @@ QPushButton:pressed
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="user_site">
+      <widget class="QWidget" name="user_site_widget">
        <property name="styleSheet">
-        <string notr="true">#user_site
-{
-	background-color: white;
-}</string>
+        <string notr="true"/>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
-        <property name="spacing">
-         <number>0</number>
-        </property>
         <property name="leftMargin">
-         <number>0</number>
+         <number>25</number>
         </property>
         <property name="topMargin">
-         <number>0</number>
+         <number>25</number>
         </property>
         <property name="rightMargin">
-         <number>0</number>
+         <number>25</number>
         </property>
         <property name="bottomMargin">
-         <number>0</number>
+         <number>25</number>
         </property>
         <item>
-         <widget class="QFrame" name="list_header">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+         <widget class="UserSite" name="user_site">
+          <property name="styleSheet">
+           <string notr="true">#user_site
+{
+	background-color: white;
+	border-radius: 5px;
+}</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
-           <property name="spacing">
-            <number>0</number>
-           </property>
            <property name="leftMargin">
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>6</number>
+            <number>9</number>
            </property>
            <property name="rightMargin">
             <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>6</number>
+            <number>0</number>
            </property>
            <item>
             <layout class="QHBoxLayout" name="header_table">
@@ -441,7 +439,7 @@ QPushButton:pressed
              <property name="rightMargin">
               <number>9</number>
              </property>
-             <item alignment="Qt::AlignBottom">
+             <item alignment="Qt::AlignTop">
               <widget class="QLabel" name="users_title">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
@@ -722,64 +720,45 @@ QPushButton:pressed
              </item>
             </layout>
            </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
-         <widget class="QScrollArea" name="table_scroll_area">
-          <property name="styleSheet">
-           <string notr="true">#table_scroll_area
+           <item>
+            <widget class="QTableView" name="table_view">
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#table_view
 {
-	border: none;
-}</string>
-          </property>
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="scroll_area_data_container">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>699</width>
-             <height>438</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">#scroll_area_data_container
-{
-	background-color: white;
-}</string>
-           </property>
-           <layout class="QVBoxLayout" name="scroll_area_data_container_layout">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QTableView" name="table_view">
-              <property name="styleSheet">
-               <string notr="true">#table_view
-{
+	background-color: transparent;
 	border: none;
 }
+
+#table_view::item
+{
+	border: 0px;
+	padding-left: 12px;
+}
+
+#table_view::item:selected
+{
+	background-color: #add8e6;
+}
 </string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+             </property>
+             <property name="showGrid">
+              <bool>false</bool>
+             </property>
+             <property name="sortingEnabled">
+              <bool>false</bool>
+             </property>
+             <property name="cornerButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -795,6 +774,12 @@ QPushButton:pressed
    <class>SideBar</class>
    <extends>QFrame</extends>
    <header>SideBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UserSite</class>
+   <extends>QFrame</extends>
+   <header>UserSite/UserSite.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

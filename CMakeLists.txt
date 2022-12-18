@@ -43,21 +43,22 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${FORMS_DIR})
 
 add_executable(FaroBT WIN32
         "${SOURCES}"
-        "${INCLUDE_DIR}/DefaultTableModel.h"
-        "${INCLUDE_DIR}/FaroBT.h"
-        "${INCLUDE_DIR}/GUIBuild.h"
-        "${INCLUDE_DIR}/SideBar.h"
-        "${INCLUDE_DIR}/SqlConnection.h"
-        "include/TableView.h"
-        "${INCLUDE_DIR}/UserSite.h"
-        "${SRC_DIR}/DefaultTableModel.cpp"
-        "${SRC_DIR}/FaroBT.cpp"
-        "${SRC_DIR}/GUIBuild.cpp"
-        "${SRC_DIR}/main.cpp"
-        "${SRC_DIR}/SideBar.cpp"
-        "${SRC_DIR}/SqlConnection.cpp"
-        "src/TableView.cpp"
-        "${SRC_DIR}/UserSite.cpp")
+        "include/DefaultTableModel.h"
+        "include/FaroBT.h"
+        "include/GUIBuild.h"
+        "include/SideBar.h"
+        "include/SqlConnection.h"
+        "include/TVDelegate.h"
+        "include/UserSite/UserSite.h"
+        "src/DefaultTableModel.cpp"
+        "src/FaroBT.cpp"
+        "src/GUIBuild.cpp"
+        "src/main.cpp"
+        "src/SideBar.cpp"
+        "src/SqlConnection.cpp"
+        "src/UserSite/UserSite.cpp"
+		"include/UserSite/ContextMenu.h"
+		)
 
 target_include_directories(FaroBT PRIVATE ${DEP_DIR})
 target_include_directories(FaroBT PRIVATE ${FORMS_DIR})
