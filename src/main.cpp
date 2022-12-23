@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     auto logger = spdlog::basic_logger_mt("main", "logs/main.log");                     // Create logger "main"; writes in file latest.log
     spdlog::flush_on(spdlog::level::info);                                              // Instantly save all lines
     spdlog::get("main")->set_pattern("%l [%H:%M:%S-%e %p] {%n - %s:%#} >>> %v");        // Custom layout
-    SPDLOG_LOG_INFO("main", "Starting logger 'main' and opening file 'latest.log'");
+    SPDLOG_LOG_INFO("main", "Starting logger 'main' and opening file 'main.log'");
 
     QApplication a(argc, argv);
     FaroBT w;

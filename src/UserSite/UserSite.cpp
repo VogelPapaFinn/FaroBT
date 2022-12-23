@@ -56,11 +56,10 @@ void UserSite::customEvent(QEvent* event)
 
         // Creating context menu
         context_menu_ = new fbt::ContextMenu(table_view_);
-        context_menu_->addAction(new QAction("Edit User"));
+        context_menu_->addAction("Edit User", this, SLOT(editUser()));
         context_menu_->addSeparator();
-        QAction* del = new QAction("Delete User");
-        context_menu_->addAction(del);
-        context_menu_->setDefaultAction(del);
+        context_menu_->addAction("Delete User", this, SLOT(deleteUser()));
+        context_menu_->setDefaultAction(context_menu_->actions()[2]);           // 1 - Edit ; 2 - Separator ; 3 - Delete
         context_menu_->setStyleSheet("QMenu::item:default{color: #760000;}");
         context_menu_->setWindowFlags(Qt::FramelessWindowHint);
         context_menu_->setAttribute(Qt::WA_TranslucentBackground);
@@ -193,4 +192,14 @@ void UserSite::customMenuRequested(QPoint pos)
     QModelIndex index = table_view_->indexAt(pos);
 
     if(index.isValid()) context_menu_->exec(pos);
+}
+
+void UserSite::editUser()
+{
+    context_menu_->close();
+}
+
+void UserSite::deleteUser()
+{
+    context_menu_->close();
 }

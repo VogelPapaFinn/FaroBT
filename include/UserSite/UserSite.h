@@ -6,6 +6,7 @@
 #include "SqlConnection.h"
 #include "TVDelegate.h"
 
+#include <qaction.h>
 #include <qboxlayout.h>
 #include <qfile.h>
 #include <qframe.h>
@@ -37,6 +38,8 @@ public slots:
     void searchInTableView();
 
     void customMenuRequested(QPoint pos);
+    void editUser();
+    void deleteUser();
 
 private:
 	std::shared_ptr<QGraphicsDropShadowEffect> drop_shadow_effect_;

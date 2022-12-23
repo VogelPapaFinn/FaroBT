@@ -15,8 +15,14 @@ namespace fbt
         ContextMenu(QWidget* parent = nullptr) : QMenu(parent) {}
         void closeEvent(QCloseEvent* evt) override
         {
-            close();
-            evt->accept();
+            if (!geometry().contains(QCursor::pos()))
+            {
+                QAction* tmp = actionAt(QCursor::pos());
+                if(tmp != nullptr) if(!tmp->isSeparator()) tmp->trigger();
+                evt->accept();
+            }
+            else
+                evt->ignore();
         }
 
     private:
